@@ -5,7 +5,7 @@
 
 public class ArrayListImpl<T> {
     private T[] dataList;
-    int size = 0;   // show the number of items in the list
+    private int size = 0;   // show the number of items in the list
     int capacity;   // show the maximum number of items array can currently hold
 
     public ArrayListImpl(int initialCapacity){
@@ -101,6 +101,14 @@ public class ArrayListImpl<T> {
         dataList = createTempList(size);
         capacity = size;
         size = 0;
+    }
+
+    public String toString(){
+        String msg = "[ ";
+        for(int i = 0; i < size; i++){
+            msg += String.valueOf(dataList[i])+", ";
+        }
+        return msg+"]";
     }
 
 }
